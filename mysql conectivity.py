@@ -40,5 +40,18 @@ def leaderboard():
 con.commit()
 leaderboard()
 
+def verifier(username,password):
+    if not username or not password:
+        print("All fields are mandatory!")
+    query = "SELECT * FROM TEMPPLAYERS WHERE USER_ID = %s AND PASSWORD = %s"
+    cur.execute(query, (username, password))
+    result = cur.fetchone()
+    if result==None:
+        print("Incorrect password or username... Please try again")
+    else:
+        print("Login successful!")
+loginname=input("please eneter your username")
+loginpassword=input("Enter your password")
+verifier(loginname,loginpassword)
 
 
