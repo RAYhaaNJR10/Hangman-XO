@@ -16,7 +16,7 @@ def insert_player_info(playername,userid,password):
     query = "INSERT INTO TEMPPLAYERS (PLAYER_NAME, USER_ID, PASSWORD) VALUES (%s, %s, %s)"
     cur.execute(query, (playername, userid, password))
     con.commit()
-    print("Data added successfully")
+    print("data added successfully")
 name=input("Enter player's name")
 userid=input("Enter your game userid")
 password=input("Enter your password")
